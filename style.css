@@ -1,0 +1,77 @@
+body{
+    background-image: linear-gradient(
+    rgb(59,88,93),
+    rgb(29,40,42)
+    );
+    height: 100vh; /*Altura do elemento(vh = vertical height disponível para visibilidade)*/
+    color: white;
+    font-family: sans-serif, Verdana, Geneva, Tahoma;
+    display: flex; /* Organiza os elementos em linhas*/
+    flex-direction: column;/* Define que os elementos Flex tenha uma direção*/
+    align-items: center;
+    
+}
+
+button {
+    background-color: inherit;
+    border: none;
+    color: inherit;
+}
+
+
+#below-cover {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Vai orientar os elementos do display flex vão se organizar, garantindo espaço entre eles*/
+    align-items: center;
+    margin: 3em 0 1em 0;
+}
+
+#button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;/*Garante o espaço entre os elementos e entre as DIV's*/
+    align-items: center;
+}
+
+.button {
+    font-size: 1.4em;
+}
+
+.button-navigate{
+    font-size: 3em;
+}
+
+.button-biggest {
+    font-size: 4em;
+}
+
+#cover {
+    width: 350px;
+    height: 400px;   
+}
+
+#song-name {
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+.light-color {
+    color: rgb(139, 153, 156);
+}
+
+#progress-bar {
+    background-color:rgb(139, 153, 156);
+    height: 3px;
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 2em;
+}
+
+#current-progress{
+    background-color: white;
+    height: inherit; /* inherit = vai herdar as semelhanças ao pai do objeto que está sendo inserida*/
+    width: 50%;
+    border-radius: inherit;
+}
+
