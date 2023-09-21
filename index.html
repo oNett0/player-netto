@@ -8,21 +8,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!--Gerenal Division-->
     <div id="music-container"> <!-- por causa dessa DIV todo os elementos se ajustaram de acordo com o tamanho da imagem, que está com propriedade na div de pixels-->
         <h4>Playlist Netto</h4>
         <img id="cover" alt="Disc cover"></img>
         <audio id="audio" ></audio>
+        <!--Banner disc-->
         <div id="below-cover">
             <div id="song-info">
             <div id="song-name">Nome da música</div><!-- Div é uma divisão(divisão da tela), cria uma espécie de retangulo para ser inserido algo-->
             <div id="band-name" class="light-color">Nome da banda</div>
             </div>
-            <button id="like" class="button light-color"><i class="bi bi-heart"></i></button> 
+            <button id="like" class="button light-color"><i class="bi bi-heart"></i></button> <!-- Ficou isolada devido a sua posição e funcionalidade-->
         </div>
-        <div id="progress-bar">
-            <div id="current-progress"></div>
+        <!--Function bar-->
+        <div id="progress-container">
+            <div id="progress-bar">
+                <div id="current-progress"></div>
         </div>
-        <div id="button-container">
+        </div>
+        <!-- Box of conteiner's-->
+        <div id="button-container"> 
             <button id="shuffle" class="button"><i class="bi bi-shuffle"></i></button> 
             <button id="next" class="button button-navigate"><i class="bi bi-skip-start-fill"></i></button>
             <button id="play" class="button button-biggest"><i class="bi bi-play-circle-fill"></i></button>
