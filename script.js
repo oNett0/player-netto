@@ -9,6 +9,7 @@ const next = document.getElementById('next');
 const previous = document.getElementById('previous');
 const currentProgress = document.getElementById('current-progress');
 const progressContainer = document.getElementById('progress-container');
+const shuffleButton = document.getElementById('shuffle');
 
 
 // Varial
@@ -35,9 +36,10 @@ const Youbody = {
 // evento no Javascript: é um fatores de efeito baseado em ação e reação.
 
 let isPlaying = false;
+let isShuffle = false;
 const playlist = [LoseControl, Sunshine, Youbody];
 let index = 0;
-
+let sortedPlaylist = [...playlist]; //spread = espalhar
 
 // Function
 
@@ -64,15 +66,15 @@ function playPauseDecider(){
 }
 
 function initializeSong(){
-    cover.src = `images/${playlist[index].File}.jpg`;
-    song.src = `music/${playlist[index].File}.mp3`;
-    songName.innerText = playlist[index].songName;
-    bandName.innerText = playlist[index].artist;
+    cover.src = `images/${sortedPlaylist[index].File}.jpg`;
+    song.src = `music/${sortePlaylist[index].File}.mp3`;
+    songName.innerText = sortedPlaylist[index].songName;
+    bandName.innerText = sortedPlaylist[index].artist;
 };
 
 function previousSong(){
     if(index === 0){
-        index = playlist.length - 1; // caso a posição esteja em 0(zero). A função vai receber o tamanho da playlist
+        index = sortedPlaylist.length - 1; // caso a posição esteja em 0(zero). A função vai receber o tamanho da playlist
     }
     else{
         index -= 1;
@@ -82,7 +84,7 @@ function previousSong(){
 };
 
 function nextSong(){
-    if(index === playlist.length - 1){
+    if(index === sortedPlaylist.length - 1){
         index = 0;
     }
     else{
@@ -103,7 +105,12 @@ function jumpTo(event){
     song.currentTime = jumpToTime;
 }
 
-
+function shuffleButtonClick(){
+    if(isShuffle === false){
+        isShuffle = true;
+        shuffleArray();
+    }
+}
 
 // Function exec
 
@@ -114,3 +121,4 @@ previous.addEventListener('click', previousSong);
 next.addEventListener('click', nextSong);
 song.addEventListener('timeupdate', updateProgressBar);
 progressContainer.addEventListener('click', jumpTo);
+shuffleButton.addEventListener('click', shuffleButtonClick);
